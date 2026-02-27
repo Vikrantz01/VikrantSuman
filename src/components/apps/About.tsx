@@ -66,7 +66,7 @@ export function About({ isDark }: AboutProps) {
                 }`}
               >
                 <img
-                  src="public/photo/Me.jpg"
+                  src="/photo/Me.jpg"
                   alt=""
                 />
               </div>
