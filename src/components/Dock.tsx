@@ -235,7 +235,7 @@ export function Dock({ items, onItemClick, isDark }: DockProps) {
                     className="dock-icon-button relative w-full h-full rounded-xl flex items-center justify-center"
                   >
                     <img
-                      src={`/Icons/${item.icon}`}
+                      src={`/icons/${item.icon}`}
                       alt={item.name}
                       className="w-full h-full object-contain pointer-events-none"
                       draggable="false"

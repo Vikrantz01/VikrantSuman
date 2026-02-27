@@ -41,7 +41,7 @@ export function Desktop({ icons, onIconClick, isDark }: DesktopProps) {
               >
                 <img
                   className="w-10 h-10 text-[#007aff]"
-                  src={`/Icons/${icon.icon}`}
+                  src={`/icons/${icon.icon}`}
                   alt={icon.name}
                 />
                 {/* <Icon className="w-7 h-7 text-[#007aff]" /> */}
