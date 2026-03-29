@@ -197,14 +197,14 @@ const PROJECTS: Project[] = [
     gradient: "from-red-600 to-black",
     iconColor: "text-red-600",
   },
-   {
+  {
     id: "Shobhit-Agarwal-Portfolio",
     name: "Shobhit Agarwal Portfolio",
     description: "Personal portfolio website showcasing tshirts printing business",
     longDescription:
       "A personal portfolio website designed to showcase a t-shirt printing business, featuring a clean and modern design that highlights products, services, and contact information effectively.",
     image: "/projects/shobhit.png",
-      techStack: ["HTML", "CSS", "JavaScript"],
+    techStack: ["HTML", "CSS", "JavaScript"],
     category: "Basic Web",
     year: "2026",
     demo: "https://shobhitagarwal.vercel.app/",
