@@ -67,23 +67,30 @@ and scalable deployment solutions.`,
   },
   "~/projects": {
     type: "directory",
-    children: ["DeployHub.txt", "VideoTube.txt", "InternPortal.txt"],
+    children: ["weatherapp.txt", "echotech.txt", "todo.txt"],
   },
-  "~/projects/DeployHub.txt": {
+  "~/projects/weatherapp.txt": {
     type: "file",
-    content: `DeployHub - One-Click Deployment Platform
-Tech: AWS (ECS, ECR, S3, EC2), Kafka, Prisma, ClickHouse, Docker
-Features: Real-time Kafka log tracking, subdomain-based access.`,
+    content: `Weather App - Real-time Weather Information
+Tech: HTML5, CSS3, JavaScript, OpenWeatherAPI
+Features: Real-time weather updates, city search, responsive design.`,
   },
-  "~/projects/VideoTube.txt": {
+  "~/projects/echotech.txt": {
     type: "file",
-    content: `Video Tube - Mood-based Recommendation System
-Tech: React.js, Node.js, Express.js, MongoDB, Gemini AI
-Features: Mood-specific content suggestions and Cloudinary integration.`,
+    content: `ECHO-TECH - E-commerce Platform
+Tech: React.js, Node.js, Express.js, MongoDB
+Features: Product catalog, shopping cart, user authentication.`,
   },
-  "~/projects/InternPortal.txt": {
+  "~/projects/todo.txt": {
     type: "file",
-    content: `Intern Management Portal - SaaS for HRs
+    content: `To-Do App - Task Management System
+Tech: React.js, Node.js, Express.js, MongoDB
+Features: Add, edit, delete tasks with real-time updates.`,
+  },
+  "~/projects/taskmanager.txt": {
+    type: "file",
+    content: `Task Manager - Project Management Tool
+
 Tech: MERN Stack
 Features: Task review, ranking, and role-based access control.`,
   },
@@ -99,44 +106,36 @@ Features: Task review, ranking, and role-based access control.`,
   },
   "~/skills/languages.txt": {
     type: "file",
-    content: "JavaScript, Python, Java, SQL, PHP, C/C++",
+    content: "Html, CSS, JavaScript, C/C++, Python",
   },
   "~/skills/frontend.txt": {
     type: "file",
-    content: "HTML5, CSS3, React.js, Redux Toolkit, Tailwind CSS",
+    content: "HTML5, CSS3, JavaScript, React, "
   },
   "~/skills/backend.txt": {
     type: "file",
-    content: "Node.js, Express.js, Prisma, WebSockets, MongoDB, PostgreSQL",
+    content: "Node.js, PHP, Python",
   },
   "~/skills/devops.txt": {
     type: "file",
-    content: "Docker, AWS (EC2, S3, ECR, ECS), Nginx, Firebase, GitHub Actions",
+    content: "Github, vercel, Netlify",
   },
   "~/skills/ai.txt": {
     type: "file",
-    content: "Vapi AI, RAG, n8n, LLM API Integration, Machine Learning",
+    content: "Blackbox, ChatGpt",
   },
   "~/experience": {
     type: "directory",
-    children: ["Nitya_Consulting.txt", "IISRPP.txt"],
+    children: ["CodvedaTechnologies.txt"],
   },
-  "~/experience/Nitya_Consulting.txt": {
+  "~/experience/ CodvedaTechnologies.txt": {
     type: "file",
     content: `Full Stack Developer Intern
-Nitya Consulting Services | Aug 2025 - Nov 2025
+Codveda | Aug 2025 - Sep 2025
 
 - Developed AI recruitment platforms for screening.
 - Implemented automated interviews using 3D AI agent (Vapi).
 - Built real estate automation platforms with n8n.`,
-  },
-  "~/experience/IISRPP.txt": {
-    type: "file",
-    content: `Full Stack Developer Intern
-IISRPP | April 2025 - May 2025
-
-- Developed a comprehensive Intern Management Portal.
-- Implemented role-based access control and task reviewed evaluation.`,
   },
   "~/contact": { type: "directory", children: ["email.txt", "social.txt"] },
   "~/contact/email.txt": {
@@ -300,17 +299,17 @@ export function Terminal({ isDark }: TerminalProps) {
       }
 
       case "pwd":
-        return [`/home/sudhanshu/${currentDir.replace("~", "")}`];
+        return [`/home/vikrant/${currentDir.replace("~", "")}`];
 
       case "about":
         return FILE_SYSTEM["~/about.txt"].content?.split("\n") || [];
 
       case "projects":
         return [
-          "\x1b[33mSudhanshu's Projects:\x1b[0m",
-          "1. DeployHub    - One-Click Cloud Deployment",
-          "2. Video Tube   - AI Mood-based Recommendations",
-          "3. Intern Portal - Student Management Platform",
+          "\x1b[33mVikrant's Projects:\x1b[0m",
+          "1. Weather App    - Real-time Weather Information",
+          "2. Echo Tech      - E-commerce Platform",
+          "3. todo - Task Management System",
           "",
           "Use 'cd projects' then 'ls' to explore.",
         ];
@@ -329,11 +328,10 @@ export function Terminal({ isDark }: TerminalProps) {
         return [
           "\x1b[1mWork Experience:\x1b[0m",
           "",
-          "\x1b[33mNitya Consulting Services\x1b[0m (Intern)",
-          "Developed AI recruitment platforms using Vapi & Next.js.",
+          "\x1b[33mCodveda\x1b[0m (Intern)",
+          "Development website using react & vite.",
           "",
-          "\x1b[33mIISRPP\x1b[0m (Intern)",
-          "Developed Intern Management Portal for student ranking.",
+          
         ];
 
       case "contact":
@@ -341,8 +339,8 @@ export function Terminal({ isDark }: TerminalProps) {
 
       case "resume":
         const link = document.createElement("a");
-        link.href = "/SUDHANSHU-KHOSLA-RESUME.pdf";
-        link.download = "Sudhanshu_Khosla_Resume.pdf";
+        link.href = "/VIKRANT-RESUME.pdf";
+        link.download = "Vikrant_Resume.pdf";
         link.click();
         return ["\x1b[32m✓ Resumé download started!\x1b[0m", ""];
 
@@ -357,7 +355,7 @@ export function Terminal({ isDark }: TerminalProps) {
         return ["__CLEAR__"];
 
       case "whoami":
-        return ["sudhanshu", "Full Stack Developer", "India", ""];
+        return ["vikrant", "Front-end Developer", "India", ""];
 
       case "date":
         return [new Date().toString(), ""];
@@ -439,11 +437,11 @@ export function Terminal({ isDark }: TerminalProps) {
                 const { text, styles } = parseAnsi(line);
                 const inlineStyles = styles
                   ? Object.fromEntries(
-                      styles
-                        .split(";")
-                        .filter((s) => s)
-                        .map((s) => s.split(":").map((v) => v.trim())),
-                    )
+                    styles
+                      .split(";")
+                      .filter((s) => s)
+                      .map((s) => s.split(":").map((v) => v.trim())),
+                  )
                   : {};
                 return (
                   <div
